@@ -5,12 +5,12 @@ const messages = [
     {
       text: "Hi there!",
       user: "Amando",
-      added: new Date()
+      added: new Date("Jan 01 2021").toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" })
     },
     {
       text: "Hello World!",
       user: "Charles",
-      added: new Date()
+      added: new Date("Jan 02 2022").toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" })
     }
  ];
 
@@ -29,9 +29,9 @@ router.post('/new', function(req, res, next){
         {
             text: req.body.message,
             user: req.body.name,
-            added: new Date()
+            added: new Date().toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" })
         })
-    res.redirect('/')
+    res.redirect('/');
 });
 
 module.exports = router;
