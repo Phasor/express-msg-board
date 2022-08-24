@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title<%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <div class="h-screen w-full bg-red-200">
+            <div class="flex flex-row justify-center">
+                <div class="flex flex-row mt-10 justify-center items-center h-20 w-[80%] border border-black">
+                    <h1 class="text-6xl"><%= title %></h1>
+                    <svg class="h-20 w-20 ml-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                      </svg>
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-center">
+                <div class="mt-10 flex flex-row justify-center items-center h-10 w-[30%] border rounded-md shadow-md bg-blue-600 hover:bg-blue-700">
+                    <a href="/new" class="text-center font-semibold text-white">New Post</a>
+                </div>
+            </div>
+            <div class="flex flex-row justify-center">
+                <div class="w-[30%]">
+                    <% messages.forEach((message) => { %>
+                    <div class="mt-10 p-3 border rounded-md shadow-md bg-gray-100">
+                        <p><span class="font-semibold">Name:  </span><%= message.user %></p>
+                        <p><span class="font-semibold">Message:  </span><%= message.text %></p>
+                        <p><span class="font-semibold">Date:  </span><%= message.added %></p>
+                    </div>
+                    <% }) %>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </body>
+</html>
